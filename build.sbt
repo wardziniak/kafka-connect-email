@@ -12,3 +12,7 @@ libraryDependencies ++= Seq(
   "com.google.code.gson" % "gson" % "2.6.2"
 )
 
+assemblyMergeStrategy in assembly := {
+  case PathList("META-INF", xs @ _*) => MergeStrategy.discard
+  case x => MergeStrategy.first
+}

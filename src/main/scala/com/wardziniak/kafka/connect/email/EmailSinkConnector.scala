@@ -2,10 +2,12 @@ package com.wardziniak.kafka.connect.email
 
 import java.util
 
+import org.apache.commons.mail.SimpleEmail
 import org.apache.kafka.common.config.ConfigDef
 import org.apache.kafka.connect.connector.Task
 import org.apache.kafka.connect.sink.SinkConnector
 import org.slf4j.{Logger, LoggerFactory}
+
 import collection.JavaConverters._
 
 /**
@@ -26,7 +28,9 @@ class EmailSinkConnector extends SinkConnector {
 
   override def config(): ConfigDef = new ConfigDef()
 
-  override def start(props: util.Map[String, String]): Unit = log.debug("start")
+  override def start(props: util.Map[String, String]): Unit = {
+    log.debug("start")
+  }
 
   override def version(): String = "0.1.1"
 }

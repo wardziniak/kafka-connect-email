@@ -9,6 +9,7 @@ libraryDependencies ++= Seq(
   "org.apache.kafka" % "connect-file" % "0.10.1.0",
   "org.apache.kafka" % "connect-runtime" % "0.10.1.0",
   "org.apache.kafka" % "connect-json" % "0.10.1.0",
+  "org.apache.commons" % "commons-email" % "1.4",
   "com.google.code.gson" % "gson" % "2.6.2"
 )
 

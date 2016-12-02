@@ -24,12 +24,12 @@ class EmailSinkConnector extends SinkConnector {
   override def taskConfigs(maxTasks: Int): util.List[util.Map[String, String]] =
     (1 to maxTasks).map(_ => configProps).asJava
 
-  override def stop(): Unit = log.debug("stop")
+  override def stop(): Unit = log.error("stop")
 
   override def config(): ConfigDef = new ConfigDef()
 
   override def start(props: util.Map[String, String]): Unit = {
-    log.debug("start")
+    log.error("start")
   }
 
   override def version(): String = "0.1.1"

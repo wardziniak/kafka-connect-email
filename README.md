@@ -74,11 +74,13 @@ wardziniak.email.connect.passoword=emailpassword
 ###Start connector
 
 * First you need to build it
+
   ```
   sbt assembly
   ```
 * Add to CLASSPATH assemblied jar ($PROJECT/target/scala-2.11/kafka-connect-email-assembly-1.0.jar)
 * Start connector
+
 ```
   $KAFKA_HOME/bin/connect-standalone.sh config/connect-main.properties config/connect-email-sink.properties
 ```

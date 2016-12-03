@@ -2,13 +2,12 @@ package com.wardziniak.kafka.connect.email
 
 import java.util
 
-import org.apache.commons.mail.SimpleEmail
 import org.apache.kafka.common.config.ConfigDef
 import org.apache.kafka.connect.connector.Task
 import org.apache.kafka.connect.sink.SinkConnector
 import org.slf4j.{Logger, LoggerFactory}
 
-import collection.JavaConverters._
+import scala.collection.JavaConverters._
 
 /**
   * Created by wardziniak on 29.11.2016.
@@ -17,7 +16,7 @@ class EmailSinkConnector extends SinkConnector {
 
   val log: Logger = LoggerFactory.getLogger(classOf[EmailSinkConnector])
 
-  private val configProps: util.Map[String, String] = new util.HashMap[String, String]()
+  private var configProps: util.Map[String, String] = new util.HashMap[String, String]()
 
   override def taskClass(): Class[_ <: Task] = classOf[EmailSinkTask]
 
@@ -29,6 +28,7 @@ class EmailSinkConnector extends SinkConnector {
   override def config(): ConfigDef = new ConfigDef()
 
   override def start(props: util.Map[String, String]): Unit = {
+    configProps = props
     log.error("start")
   }
 

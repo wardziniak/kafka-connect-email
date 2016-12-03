@@ -2,7 +2,7 @@ package com.wardziniak.kafka.connect.email
 
 import java.util
 
-import com.wardziniak.kafka.connect.email.model.{EmailMessage, Message, Recipient}
+import com.wardziniak.kafka.connect.email.model.{EmailMessage, Recipient}
 import org.apache.kafka.connect.data.{Schema, SchemaAndValue, SchemaBuilder}
 import org.apache.kafka.connect.storage.Converter
 import org.slf4j.{Logger, LoggerFactory}
